@@ -1,0 +1,84 @@
+<!-- INCLUDE -->
+
+{% extends "bootstrap/base.html" %}  {% block navbar %} {% include
+    "header.html" %} {% include "footer.html" %} {% endblock %} {% block head %} {{
+    super() }}
+    
+    <style>
+      .lijevo {
+        text-align: left;
+      }
+    </style>
+    
+    {% endblock %} {% block content %}
+    
+    <div class="container">
+      <div class="row">
+        <!--STUPAC 1-->
+        <div class="col-md-2 sidenav"></div>
+    
+        <!--STUPAC 2-->
+        <div class="col-md-8 text-center">
+          <div class="page-header">
+            <!--SVE SKUPA-->
+            <div class="row">
+              <form class="verticalform" action="/forma" method="POST">
+                <div class="form-group">
+                  <!--Idp-->
+                  <h1 value="redni_broj" name="redni_broj">
+                    Podatak broj: {{redni_broj}}
+                  </h1>
+                  <!--Idk-->
+    
+                  <br />
+                  <br />
+
+                    <!--1. Učenik-početak-->
+                    <div class="lijevo">
+                        <label for="exampleDropdown">Učenik:</label>
+                      </div>
+                      {% if dolazak %}
+                      <input type="text" class="form-control dp" name="ucenik" value={{dolazak}} />
+                      {% else %}
+                      <input type="text" class="form-control dp" name="ucenik" />
+                      {% endif %}   
+                      <!--Učenik-kraj-->               
+        
+                      <br />          
+    
+                  <!--2. Programski jezik-početak-->
+                  <div class="lijevo">
+                    <label for="exampleDropdown">Odaberi programski jezik:</label>
+                  </div>
+                  <div class="dropdown">
+                    <select class="form-control" id="exampleDropdown" name="programski_jezik">
+                      <option selected>Otvori za odabir</option>
+                      {%for lis in gosti%}
+                      <option value="{{lis}}">{{lis}}</option>
+                      {%endfor%}
+                    </select>
+                  </div>
+                  <!--Programski jezik-kraj-->
+    
+                  <br />    
+    
+                                  
+    
+                  <!--6. Dodaj-p-->
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Dodaj
+                  </button>
+                  <!--Dodaj-k-->
+                </div>
+              </form>
+            </div>
+            <!--SVE SKUPA-->
+          </div>
+        </div>
+    
+        <!--STUPAC 3-->
+        <div class="col-md-2 sidenav"></div>
+      </div>
+    </div>
+    
+    {% endblock %}
