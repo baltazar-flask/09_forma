@@ -1,14 +1,22 @@
-Flask-bootstrap
-pip install flask-bootstrap
+# Flask Form Application
+Aplikacija koja koristi formu za unos podataka
 
-Izrada requirements.txt sa korištenim bibliotekama
-pip freeze > requirements.txt
+## 1. Tehnologije
+- Flask (3.0.3)
+- Jinja2 (3.1.4)
+- Flask-Bootstrap (3.3.7.1)
 
-Iteriranje po rječniku
+## 2. Instalacija
+1. Klonirajte repozitorij
 
-Preuzimanje s GitHub računa
+2. Kreirajte virtualno okruženje
+    - py -m venv venv
+    - venv/scripts/activate.ps1  # Za Windows
 
-1. py -m venv venv
-2. venv/scripts/activate.ps1
-3. pip install -r requirements.txt
-4. py wsgi.py
+3. Instaliranje zavisnosti
+    - pip install -r requirements.txt
+
+4. Pokretanje aplikacije
+    - py wsgi.py
+
+5. Otvorite aplikaciju na http://127.0.0.1:5000/
