@@ -39,7 +39,7 @@ def forma():
     else:
         redni_broj=len(data)+1    
   
-    return render_template('form.html',redni_broj=1,gosti=gosti)
+    return render_template('form.html',redni_broj=redni_broj,gosti=gosti)
 
 @app.route('/podaci', methods=['get', 'post'])
 def podaci():
